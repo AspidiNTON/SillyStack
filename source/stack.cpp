@@ -52,10 +52,10 @@ int checkStack(Stack* stack){
 }
 
 void printStackData(Stack* stack) {
-    printf("Stack [%#x]\n", stack);
+    printf("Stack [0x%p]\n", stack);
     printf("Size = %d\n", stack->size);
     printf("Capacity = %d\n", stack->capacity);
-    printf("Data [%#x]\n", stack->data);
+    printf("Data [0x%p]\n", stack->data);
 
     for (int i = 0; i < stack->size; ++i) {
         printf("[%d] = %d\n", i, *(stack->data + i));
