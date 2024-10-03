@@ -2,29 +2,59 @@
 #define STACK_H
 
 #include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
 
 #include "mem.h"
+#include "errorTypes.h"
 
 #define max(A, B) ((A) > (B) ? (A) : (B))
 
 typedef int StackElem;
 
 struct Stack {
-    StackElem* data;
+    char* data;
     int size;
     int capacity;
+    uint64_t hash;
 };
 
-int stackInit(Stack* stack);
+struct ProtectedStack{
+    Stack stack;
+    bool isInit = false;
+};
 
-int stackDestroy(Stack* stack);
+stackErrorType initialize(ProtectedStack* pstack);
 
-int stackPush(Stack* stack, StackElem elem);
+stackErrorType destroy(ProtectedStack* pstack);
 
-StackElem stackPop(Stack* stack);
+stackErrorType push(ProtectedStack* pstack, StackElem elem);
 
-int checkStack(Stack* stack);
+stackErrorType pop(ProtectedStack* pstack, StackElem* elem);
 
-void printStackData(Stack* stack);
+stackErrorType printStack(const ProtectedStack* pstack);
+
+//int getsize(ProtectedStack* pstack);
+
+
+stackErrorType stackInit(Stack* stack);
+
+stackErrorType stackDestroy(Stack* stack);
+
+stackErrorType stackPush(Stack* stack, StackElem elem);
+
+stackErrorType stackPop(Stack* stack, StackElem* elem);
+
+stackErrorType updateStackCapacity(Stack* stack);
+
+void printStackData(const Stack* stack);
+
+uint64_t calcHash(const Stack* stack);
+
+stackErrorType checkHash(const Stack* stack);
+
+stackErrorType checkCanary(const Stack* stack);
+
+stackErrorType checkStack(const ProtectedStack* pstack);
 
 #endif
