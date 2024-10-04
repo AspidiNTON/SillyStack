@@ -1,9 +1,9 @@
 #ifndef ERROR_TYPES_H
 #define ERROR_TYPES_H
 
-#define printfRed(s, a...) printf("\033[0;31m" s "\033[1;0m", ## a)
+#define printfRed(s, ...) printf("\033[0;31m" s "\033[1;0m", ## __VA_ARGS__)
 
-#define printErr(s, a...) fprintf(stderr, "\033[0;31m" s "\033[1;0m", ## a)
+#define printErr(s, ...) fprintf(stderr, "\033[0;31m" s "\033[1;0m", ## __VA_ARGS__)
 
 
 /* #define printErr(s, a...) \

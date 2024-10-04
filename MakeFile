@@ -11,7 +11,7 @@ EXECUTABLE = $(BIN_DIR)/myprogram
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTS) $(BIN_DIR)
+$(EXECUTABLE): $(OBJECTS) $(BIN_DIR)  
 	$(CC) $(OBJECTS) -o $@
 
 $(OBJECTS): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(OBJ_DIR)
