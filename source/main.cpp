@@ -10,7 +10,6 @@ int main() {
 
 
     initialize(&stack);
-
     printStack(stack);
     push(stack, 5);
     push(stack, 22848);

@@ -24,7 +24,8 @@ enum stackErrorType{
     UNINITIALIZED_STACK_ERROR = 7,
     CANARY_ERROR = 8,
     CAPACITY_ERROR = 9,
-    NULLPTR_ERROR = 10
+    NULLPTR_ERROR = 10,
+    STRUCT_HASH_ERROR = 11
 };
 
 #endif
