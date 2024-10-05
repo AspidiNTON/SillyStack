@@ -18,6 +18,17 @@ const uint32_t IS_INIT = 0xDD;
 //static stackErrorType updateStackCapacity(Stack* stack);
 
 
+static stackErrorType updateStackCapacity(Stack* stack);
+
+static uint64_t calcHash(const Stack* stack);
+
+static stackErrorType checkHash(const Stack* stack);
+
+static stackErrorType checkCanary(const Stack* stack);
+
+static stackErrorType checkStack(const Stack* stack);
+
+
 
 struct Stack_ {
     uint32_t isInit;

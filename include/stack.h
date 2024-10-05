@@ -26,14 +26,4 @@ stackErrorType pop(Stack* stack, StackElem* elem);
 
 stackErrorType printStack(const Stack* stack);
 
-static stackErrorType updateStackCapacity(Stack* stack);
-
-static uint64_t calcHash(const Stack* stack);
-
-static stackErrorType checkHash(const Stack* stack);
-
-static stackErrorType checkCanary(const Stack* stack);
-
-static stackErrorType checkStack(const Stack* stack);
-
 #endif

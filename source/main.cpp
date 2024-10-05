@@ -7,8 +7,9 @@
 int main() {
     Stack* stack;
 
-    initialize(&stack);
 
+
+    initialize(&stack);
 
     printStack(stack);
     push(stack, 5);
